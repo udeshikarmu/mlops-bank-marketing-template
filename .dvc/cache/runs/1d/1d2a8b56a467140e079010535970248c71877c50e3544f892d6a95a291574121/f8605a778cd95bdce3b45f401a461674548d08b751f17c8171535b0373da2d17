@@ -1,0 +1,15 @@
+cmd: uv run python -m src.download
+deps:
+- path: src/download.py
+  hash: md5
+  md5: 64e2447a073cb181e925ce8a80cabe75
+  size: 1244
+params:
+  params.yaml:
+    data.raw: data/raw/bank-additional-full.csv
+    data.url: https://archive.ics.uci.edu/static/public/222/bank+marketing.zip
+outs:
+- path: data/raw/bank-additional-full.csv
+  hash: md5
+  md5: f6cb2c1256ffe2836b36df321f46e92c
+  size: 5834924

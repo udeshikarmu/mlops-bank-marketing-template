@@ -1,0 +1,5 @@
+['remote "origin"']
+    url = https://dagshub.com/DushanJalath/mlops-bank-marketing-template.dvc
+    auth = basic
+    user = DushanJalath
+    password = 1d6b4d8506d7119f69a0eebc5f2e2148937e5918
