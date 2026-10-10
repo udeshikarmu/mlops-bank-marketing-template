@@ -1,0 +1,30 @@
+cmd: uv run python -m src.evaluate
+deps:
+- path: data/processed/eval.csv
+  hash: md5
+  md5: 20906f1ff0c994de345fece64dd975b3
+  size: 757811
+- path: models/model.cbm
+  hash: md5
+  md5: 26c5d1b99b4a9a9b4dbb12482ef0478b
+  size: 725360
+- path: src/evaluate.py
+  hash: md5
+  md5: 86fcd7b8f24c2c19285077180c6a50b2
+  size: 1834
+- path: src/metrics.py
+  hash: md5
+  md5: 6109caa6dc2ee415734a340ba8eddea8
+  size: 848
+params:
+  params.yaml:
+    evaluate.top_k_fraction: 0.2
+outs:
+- path: eval_metrics.json
+  hash: md5
+  md5: 10ad2c3e1824163d583b3058553f152e
+  size: 209
+- path: plots/shap_summary.png
+  hash: md5
+  md5: cae32003562694923d7de901d285d870
+  size: 76860
