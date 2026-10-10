@@ -1,0 +1,51 @@
+cmd: uv run python -m src.data
+deps:
+- path: data/production/labelled.csv
+  hash: md5
+  md5: 55f679f06c3ba5e8d052adb456fe7a3c
+  size: 193
+- path: data/raw/bank-additional-full.csv
+  hash: md5
+  md5: f6cb2c1256ffe2836b36df321f46e92c
+  size: 5834924
+- path: src/data.py
+  hash: md5
+  md5: 50972843ff1f7e609353b87a3d39783a
+  size: 4682
+params:
+  params.yaml:
+    data:
+      url: https://archive.ics.uci.edu/static/public/222/bank+marketing.zip
+      raw: data/raw/bank-additional-full.csv
+      production: data/production/labelled.csv
+      processed_dir: data/processed
+      history_frac: 0.8
+      val_frac: 0.2
+      holdout_frac: 0.3
+      drop_columns:
+      - duration
+      seed: 42
+    model.cat_features:
+    - job
+    - marital
+    - education
+    - default
+    - housing
+    - loan
+    - contact
+    - month
+    - day_of_week
+    - poutcome
+outs:
+- path: data/processed/eval.csv
+  hash: md5
+  md5: 20906f1ff0c994de345fece64dd975b3
+  size: 757811
+- path: data/processed/future.csv
+  hash: md5
+  md5: 2e99627329a03c5465693d96808dcb91
+  size: 927965
+- path: data/processed/train.csv
+  hash: md5
+  md5: 565398a9fccf4c59c373205e31057601
+  size: 3025231
